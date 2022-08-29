@@ -1,696 +1,110 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>游戏-隐私政策</title>
-		<meta name="Description" content="游戏,隐私政策" />
-		<meta name="Keywords" content="游戏,隐私政策" />
-		<!-- <link rel="stylesheet" href="css/fonts.css"> -->
-
-		<style type="text/css">
-			* {
-				margin: 0px;
-				padding: 0px;
-			}
-
-			body {
-				background-color: lightgray;
-				text-align: center;
-			}
-
-			a {
-				text-decoration: none;
-				color: black;
-			}
-
-			a:hover {
-				color: deepskyblue;
-			}
-
-			li {
-				list-style: none;
-			}
-
-			.clearfix:after {
-				/*伪元素是行内元素 正常浏览器清除浮动方法*/
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-
-			/* 导航条 */
-			#nav {
-				width: 90%;
-				min-width: 1000px;
-				height: 50px;
-				background-color: white;
-				border-radius: 10px;
-				margin: 0px auto;
-				line-height: 50px;
-			}
-
-			#nav .logo {
-				float: left;
-				height: 48px;
-				line-height: 48px;
-			}
-
-			#nav .logo li {
-				box-sizing: border-box;
-				cursor: pointer;
-				padding-left: 5px;
-				padding-right: 5px;
-			}
-
-			#nav .logo li a {
-				height: 48px;
-				width: 100%;
-				display: block;
-			}
-
-			/* 更多的after */
-			.moreAfter::after {
-				font-family: 'Linearicons-Free';
-				speak: none;
-				font-style: normal;
-				font-weight: normal;
-				font-variant: normal;
-				text-transform: none;
-				line-height: 1;
-				content: "\e874";
-				margin-left: 5px;
-				/* Better Font Rendering =========== */
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-			}
-
-			#nav .login {
-				float: right;
-				margin-right: 20px;
-				height: 50px;
-			}
-
-			#nav>a>img {
-				width: 110px;
-				height: 40px;
-				vertical-align: middle;
-			}
-
-			#nav .login img {
-				width: 30px;
-				height: 30px;
-				vertical-align: middle;
-			}
-
-			#nav>a {
-				float: left;
-				display: inline-block;
-				margin-left: 20px;
-			}
-
-			#nav .logo li {
-				float: left;
-				padding-left: 10px;
-				padding-right: 10px;
-			}
-
-			#nav .logo li:hover {
-				border-bottom: 2px solid #000000;
-				background-color: lightgray;
-			}
-
-			#nav .login li {
-				float: right;
-				padding-left: 10px;
-				padding-right: 10px;
-			}
-
-			#nav .login .userName {
-				background-color: rgba(0, 0, 0, 0.05);
-				border-radius: 5px;
-				height: 30px;
-				line-height: 30px;
-				margin-top: 10px;
-			}
-
-			#nav .login a {
-				float: right;
-				padding-left: 10px;
-				padding-right: 10px;
-				color: blue;
-				margin: 0px;
-			}
-
-			#nav .login a:hover {
-				color: deepskyblue;
-			}
-
-			#notice {
-				position: relative;
-			}
-
-			#notice span {
-				position: absolute;
-				padding-left: 10px;
-				padding-right: 10px;
-				left: 10px;
-				top: 0rem;
-				text-align: center;
-				height: 20px;
-				line-height: 20px;
-				font-size: 10px;
-				border-radius: 10px;
-				background-color: red;
-				color: white;
-			}
-
-			/* 搜索条 */
-			#search {
-				width: 90%;
-				min-width: 1000px;
-				height: 50px;
-				text-align: center;
-				background-color: white;
-				margin: 10px auto;
-				border-radius: 10px;
-				padding-top: 10px;
-				cursor: pointer;
-			}
-
-			#search .father {
-				margin: 0 auto;
-				height: 40px;
-				width: 670px;
-				top: 10px;
-				line-height: 40px;
-			}
-
-			#search .father span {
-				font-size: 16px;
-				color: deepskyblue;
-				margin-left: 10px;
-				margin-right: 10px;
-				display: block;
-				float: left;
-				height: 40px;
-			}
-
-			#search .father input {
-				padding-left: 10px;
-				height: 38px;
-				width: 400px;
-				/* outline: none; */
-				display: block;
-				float: left;
-				border: 1px solid deepskyblue;
-			}
-
-			#search .father div {
-				background-color: deepskyblue;
-				padding-left: 10px;
-				padding-right: 10px;
-				display: block;
-				float: left;
-				height: 40px;
-			}
-
-			#search .father a {
-				color: deepskyblue;
-				padding-left: 10px;
-				padding-right: 10px;
-				display: block;
-				float: left;
-				height: 40px;
-			}
-
-			/* message */
-			#message {
-				font-size: 20px;
-				color: white;
-				height: 100px;
-				padding-left: 40px;
-				padding-right: 40px;
-				line-height: 100px;
-				text-align: center;
-				display: none;
-				position: fixed;
-				border-radius: 6px;
-				border: 1px solid lightgray;
-				box-shadow: 0 0 20px -5px;
-				background-color: rgba(0, 0, 0, 0.65);
-			}
-
-			/* footer */
-			#foot {
-				margin-top: 20px;
-				text-align: center;
-				background-color: rgba(235, 235, 235, 1.0);
-				padding: 20px 0px;
-			}
-
-			#foot ul {
-				margin: 0px auto;
-			}
-
-			#foot li {
-				display: inline-block;
-				padding-left: 10px;
-				padding-right: 10px;
-				height: 30px;
-				line-height: 30px;
-				color: rgba(100, 100, 100, 1.0);
-				font-size: 15px;
-			}
-
-			#foot a {
-				font-size: 15px;
-				color: rgba(100, 100, 100, 1.0);
-			}
-
-			#foot a:hover {
-				color: deepskyblue;
-			}
-
-			#foot .line {
-				width: 100%;
-				height: 1px;
-				background-color: darkgray;
-				padding: 0px, 10px;
-			}
-
-			#foot .beian {
-				margin-top: 10px;
-				color: rgba(100, 100, 100, 1.0);
-				font-size: 15px;
-				margin: 0px auto;
-			}
-
-			/* --------------主体-------------- */
-			/* 主体:笔刷 */
-			#bigContainer {
-				margin: 0px auto;
-				width: 90%;
-				min-width: 1000px;
-			}
-
-			#containerLeft {
-				width: 100%;
-				background-color: white;
-				border-radius: 5px 5px 0px 0px;
-				overflow: hidden;
-				float: left;
-
-			}
-
-			#containerLeft .title {
-				height: 40px;
-				width: 100%;
-				text-align: center;
-				line-height: 40px;
-				color: black;
-				background-color: white;
-			}
-
-			#containerLeft .line {
-				height: 1px;
-				background-color: black;
-			}
-
-			#containerLeft .mainBody {}
-
-			#containerLeft .mainBody ul {
-				padding: 10px;
-				margin: 0px auto;
-				width: 1000px;
-			}
-
-			#containerLeft .mainBody li {
-				display: block;
-				float: left;
-				width: 200px;
-				height: 400px;
-				border-radius: 6px;
-			}
-
-			#containerLeft .mainBody li img {
-				width: 100%;
-				height: 100%;
-			}
-			#containerLeft .pText {
-				padding: 20px;
-			}
-			
-
-			.download {
-				margin-top: 30px;
-				margin-bottom: 100px;
-			}
-
-			.download button {
-				padding-left: 70px;
-				padding-right: 70px;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				font-size: 28px;
-				cursor: pointer;
-			}
-
-			/* 右侧固定 */
-			#rightAbout {
-				background-color: white;
-				box-shadow: 0 0 10px -2px;
-				position: fixed;
-				top: 200px;
-				right: 5px;
-				line-height: 30px;
-				width: 30px;
-				z-index: 10;
-				border-radius: 4px;
-			}
-
-			#rightAbout li {
-				width: 30px;
-				height: 30px;
-				border-bottom: 1px dotted lightgrey;
-			}
-
-			#rightAbout li img {
-				width: 60%;
-				height: 60%;
-				margin-top: 6px;
-			}
-
-			#rightAbout li:hover {
-				cursor: pointer;
-			}
-
-			/* 滚动顶部 */
-			#scrollTop {
-				background-color: white;
-				box-shadow: 0 0 10px -2px;
-				position: fixed;
-				width: 30px;
-				height: 30px;
-				right: 5px;
-				bottom: 40px;
-				cursor: pointer;
-				z-index: 9;
-				text-align: center;
-				line-height: 30px;
-				border-radius: 4px;
-				opacity: 0.5;
-			}
-
-			/* ----------------隐藏------------------ */
-			/* 隐藏:常用搜索词 */
-			#keywords {
-				display: none;
-				position: fixed;
-				width: 400px;
-				background-color: white;
-				box-shadow: 0 0 20px -5px;
-				padding: 10px;
-				border-radius: 8px;
-			}
-
-			#keywords li {
-				display: block;
-				float: left;
-				height: 30px;
-				line-height: 30px;
-				padding-left: 5px;
-				padding-right: 5px;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				margin: 4px;
-				background-color: #D3D3D3;
-				border-radius: 6px;
-			}
-
-			#keywords li:hover {
-				cursor: pointer;
-				color: deepskyblue;
-			}
-
-			/* 隐藏:列表 */
-			#listItem {
-				text-align: center;
-				line-height: 30px;
-				height: 60px;
-				width: 150px;
-				display: none;
-				position: fixed;
-				box-shadow: 0 0 20px -5px;
-				border-radius: 3px;
-				overflow: hidden;
-			}
-
-			#listItem li {
-				background-color: white;
-				border-bottom: 1px dotted lightgray;
-				font-size: 14px;
-			}
-
-			#listItem li:hover {
-				color: deepskyblue;
-				cursor: pointer;
-			}
-
-			/* 隐藏:翻译 */
-			#fanyi {
-				position: fixed;
-				display: none;
-				width: 300px;
-				background-color: white;
-				box-shadow: 0 0 20px -5px;
-				line-height: 40px;
-				padding: 16px;
-				border-radius: 8px;
-			}
-
-			#fanyi .item1 {
-				float: left;
-				width: 206px;
-				height: 38px;
-				outline: none;
-				border: 1px solid deepskyblue;
-			}
-
-			#fanyi .item2 {
-				float: left;
-				width: 80px;
-				height: 40px;
-				background-color: deepskyblue;
-			}
-
-			#fanyi .item3 {
-				float: left;
-				width: 286px;
-				height: 40ppx;
-				outline: none;
-				border: 1px solid deepskyblue;
-				margin-top: 10px;
-				line-height: 40px;
-			}
-
-			#fanyi .button1 {
-				float: left;
-				padding-left: 10px;
-				padding-right: 10px;
-				padding-top: 3px;
-				padding-bottom: 3px;
-				height: 30px;
-				margin-top: 10px;
-			}
-
-			#fanyi .button2 {
-				float: left;
-				padding-left: 10px;
-				padding-right: 10px;
-				padding-top: 3px;
-				padding-bottom: 3px;
-				height: 30px;
-				margin-left: 30px;
-				margin-top: 10px;
-			}
-
-			#fanyi input {
-				padding-left: 10px;
-			}
-
-			/* 隐藏:笔刷更多 */
-			#moreBrush {
-				display: none;
-				position: fixed;
-				background-color: white;
-				box-shadow: 0 0 20px -5px;
-				width: 90px;
-				border-radius: 5px;
-			}
-
-			#moreBrush li {
-				height: 40xp;
-				line-height: 40px;
-				text-align: left;
-				border-bottom: 0.8px dotted darkgray;
-				font-size: 14px;
-				padding-left: 10px;
-			}
-
-			/* 隐藏:调色卡更多 */
-			#moreColor {
-				display: none;
-				position: fixed;
-				background-color: white;
-				box-shadow: 0 0 20px -5px;
-				width: 90px;
-				border-radius: 5px;
-			}
-
-			#moreColor li {
-				height: 40xp;
-				line-height: 40px;
-				text-align: left;
-				border-bottom: 0.8px dotted darkgray;
-				font-size: 14px;
-				padding-left: 10px;
-			}
-		</style>
-		
-	</head>
-	<body>
-		
-		
-		<!-- 主体内容开始 -->
-		<div id="bigContainer" class="clearfix">
-			<div id="containerLeft">
-				<div class="title">
-					<h2>游戏隐私政策</h2>
-				</div>
-				<div class="line">
-				</div>
-				<div class="mainBody clearfix">	
-				</div>
-				<div class="pText">
-					<div style="text-align:justify;">
-						<span style="font-family:&quot;">游戏隐私政策</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">游戏尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，本应用会按照本隐私权政策的规定使用和披露您的个人信息。但本应用将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，本应用不会将这些信息对外披露或向第三方提供。本应用会不时更新本隐私权政策。 您在同意本应用服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于本应用服务使用协议不可分割的一部分。以下统称游戏为本应用</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">1. 适用范围</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(a) 在您注册本应用帐号时，您根据本应用要求提供的个人注册信息；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(b) 在您使用本应用网络服务，或访问本应用平台网页时，本应用自动接收并记录的您的浏览器和计算机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(c) 本应用通过合法途径从商业伙伴处取得的用户个人数据。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">您了解并同意，以下信息不适用本隐私权政策：</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(a) 您在使用本应用平台提供的搜索服务时输入的关键字信息；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(b) 本应用收集到的您在本应用发布的有关信息数据，包括但不限于参与活动、成交信息及评价详情；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(c) 违反法律规定或违反本应用规则行为及本应用已对您采取的措施。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">2. 信息使用</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(a)本应用不会向任何无关第三方提供、出售、出租、分享或交易您的个人信息，除非事先得到您的许可，或该第三方和本应用（含本应用关联公司）单独或共同为您提供服务，且在该服务结束后，其将被禁止访问包括其以前能够访问的所有这些资料。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(b) 本应用亦不允许任何第三方以任何手段收集、编辑、出售或者无偿传播您的个人信息。任何本应用平台用户如从事上述活动，一经发现，本应用有权立即终止与该用户的服务协议。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(c) 为服务用户的目的，本应用可能通过使用您的个人信息，向您提供您感兴趣的信息，包括但不限于向您发出产品和服务信息，或者与本应用合作伙伴共享信息以便他们向您发送有关其产品和服务的信息（后者需要您的事先同意）。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">3. 信息披露</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">在如下情况下，本应用将依据您的个人意愿或法律的规定全部或部分的披露您的个人信息：</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(a) 经您事先同意，向第三方披露；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(b)为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(c) 根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(d) 如您出现违反中国有关法律、法规或者本应用服务协议或相关规则的情况，需要向第三方披露；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(e) 如您是适格的知识产权投诉人并已提起投诉，应被投诉人要求，向被投诉人披露，以便双方处理可能的权利纠纷；</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(f) 在本应用平台上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的，本应用有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(g) 其它本应用根据法律、法规或者网站政策认为合适的披露。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">4. 信息存储和交换</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">本应用收集的有关您的信息和资料将保存在本应用及（或）其关联公司LeanCloud服务器,LeanCloud官网:https://leancloud.cn，这些信息和资料可能传送至您所在国家、地区或本应用收集信息和资料所在地的境外并在境外被访问、存储和展示。</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">6. 信息安全</span> 
-					</div>
-					
-					<div style="text-align:left;">
-						<span style="font-family:&quot;">(a) 本应用帐号均有安全保护功能，请妥善保管您的用户名及密码信息。本应用将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在“完善的安全措施”。</span> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- foot底部结束 -->
-		
-
-		
-		
-	</body>
-</html>
-
-
+    <html>
+    <head>
+      <meta charset='utf-8'>
+      <meta name='viewport' content='width=device-width'>
+      <title>Privacy Policy</title>
+      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
+    </head>
+    <body>
+    <strong>Privacy Policy</strong> <p>
+                  ReganLV built the PerfectCombo app as
+                  a Free app. This SERVICE is provided by
+                  ReganLV at no cost and is intended for use as
+                  is.
+                </p> <p>
+                  This page is used to inform visitors regarding my
+                  policies with the collection, use, and disclosure of Personal
+                  Information if anyone decided to use my Service.
+                </p> <p>
+                  If you choose to use my Service, then you agree to
+                  the collection and use of information in relation to this
+                  policy. The Personal Information that I collect is
+                  used for providing and improving the Service. I will not use or share your information with
+                  anyone except as described in this Privacy Policy.
+                </p> <p>
+                  The terms used in this Privacy Policy have the same meanings
+                  as in our Terms and Conditions, which are accessible at
+                  PerfectCombo unless otherwise defined in this Privacy Policy.
+                </p> <p><strong>Information Collection and Use</strong></p> <p>
+                  For a better experience, while using our Service, I
+                  may require you to provide us with certain personally
+                  identifiable information. The information that
+                  I request will be retained on your device and is not collected by me in any way.
+                </p> <div><p>
+                    The app does use third-party services that may collect
+                    information used to identify you.
+                  </p> <p>
+                    Link to the privacy policy of third-party service providers used
+                    by the app
+                  </p> <ul><li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></ul></div> <p><strong>Log Data</strong></p> <p>
+                  I want to inform you that whenever you
+                  use my Service, in a case of an error in the app
+                  I collect data and information (through third-party
+                  products) on your phone called Log Data. This Log Data may
+                  include information such as your device Internet Protocol
+                  (“IP”) address, device name, operating system version, the
+                  configuration of the app when utilizing my Service,
+                  the time and date of your use of the Service, and other
+                  statistics.
+                </p> <p><strong>Cookies</strong></p> <p>
+                  Cookies are files with a small amount of data that are
+                  commonly used as anonymous unique identifiers. These are sent
+                  to your browser from the websites that you visit and are
+                  stored on your device's internal memory.
+                </p> <p>
+                  This Service does not use these “cookies” explicitly. However,
+                  the app may use third-party code and libraries that use
+                  “cookies” to collect information and improve their services.
+                  You have the option to either accept or refuse these cookies
+                  and know when a cookie is being sent to your device. If you
+                  choose to refuse our cookies, you may not be able to use some
+                  portions of this Service.
+                </p> <p><strong>Service Providers</strong></p> <p>
+                  I may employ third-party companies and
+                  individuals due to the following reasons:
+                </p> <ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p>
+                  I want to inform users of this Service
+                  that these third parties have access to their Personal
+                  Information. The reason is to perform the tasks assigned to
+                  them on our behalf. However, they are obligated not to
+                  disclose or use the information for any other purpose.
+                </p> <p><strong>Security</strong></p> <p>
+                  I value your trust in providing us your
+                  Personal Information, thus we are striving to use commercially
+                  acceptable means of protecting it. But remember that no method
+                  of transmission over the internet, or method of electronic
+                  storage is 100% secure and reliable, and I cannot
+                  guarantee its absolute security.
+                </p> <p><strong>Links to Other Sites</strong></p> <p>
+                  This Service may contain links to other sites. If you click on
+                  a third-party link, you will be directed to that site. Note
+                  that these external sites are not operated by me.
+                  Therefore, I strongly advise you to review the
+                  Privacy Policy of these websites. I have
+                  no control over and assume no responsibility for the content,
+                  privacy policies, or practices of any third-party sites or
+                  services.
+                </p> <p><strong>Children’s Privacy</strong></p> <div><p>
+                    These Services do not address anyone under the age of 13.
+                    I do not knowingly collect personally
+                    identifiable information from children under 13 years of age. In the case
+                    I discover that a child under 13 has provided
+                    me with personal information, I immediately
+                    delete this from our servers. If you are a parent or guardian
+                    and you are aware that your child has provided us with
+                    personal information, please contact me so that
+                    I will be able to do the necessary actions.
+                  </p></div> <!----> <p><strong>Changes to This Privacy Policy</strong></p> <p>
+                  I may update our Privacy Policy from
+                  time to time. Thus, you are advised to review this page
+                  periodically for any changes. I will
+                  notify you of any changes by posting the new Privacy Policy on
+                  this page.
+                </p> <p>This policy is effective as of 2022-09-01</p> <p><strong>Contact Us</strong></p> <p>
+                  If you have any questions or suggestions about my
+                  Privacy Policy, do not hesitate to contact me at 562297124@qq.com.
+                </p> <p>This privacy policy page was created at <a href="https://privacypolicytemplate.net" target="_blank" rel="noopener noreferrer">privacypolicytemplate.net </a>and modified/generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
+    </body>
+    </html>
+      
